@@ -116,7 +116,6 @@
             border-radius: 10px;
             margin: 2.5rem 0;
             border-right: 4px solid #3498db;
-            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.05);
         }
         
         .collaboration-title {
@@ -145,11 +144,6 @@
             border-radius: 8px;
             text-align: center;
             box-shadow: 0 2px 4px rgba(0, 0, 0, 0.05);
-            transition: transform 0.3s;
-        }
-        
-        .skill-item:hover {
-            transform: translateY(-3px);
         }
         
         .skill-icon {
@@ -171,14 +165,11 @@
             border-radius: 10px;
             text-align: center;
             box-shadow: 0 4px 6px rgba(0, 0, 0, 0.05);
-            transition: all 0.3s;
-            border: 2px solid transparent;
+            transition: transform 0.3s;
         }
         
         .contact-card:hover {
             transform: translateY(-5px);
-            box-shadow: 0 8px 15px rgba(0, 0, 0, 0.1);
-            border-color: #3498db;
         }
         
         .contact-icon {
@@ -186,29 +177,14 @@
             margin-bottom: 1rem;
         }
         
-        .instagram-icon {
+        .instagram {
             background: linear-gradient(45deg, #405DE6, #5851DB, #833AB4, #C13584, #E1306C, #FD1D1D);
             -webkit-background-clip: text;
             -webkit-text-fill-color: transparent;
-            background-clip: text;
         }
         
-        .email-icon {
-            background: linear-gradient(45deg, #EA4335, #FBBC05);
-            -webkit-background-clip: text;
-            -webkit-text-fill-color: transparent;
-            background-clip: text;
-        }
-        
-        .contact-card h3 {
-            color: #2c3e50;
-            margin-bottom: 1rem;
-            font-size: 1.3rem;
-        }
-        
-        .contact-card p {
-            color: #555;
-            margin-bottom: 1.5rem;
+        .email {
+            color: #ea4335;
         }
         
         .contact-button {
@@ -218,15 +194,12 @@
             padding: 0.7rem 1.5rem;
             border-radius: 4px;
             text-decoration: none;
-            transition: all 0.3s;
+            transition: background-color 0.3s;
             font-weight: 500;
-            box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
         }
         
         .contact-button:hover {
             background-color: #2980b9;
-            transform: translateY(-2px);
-            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.15);
         }
         
         .back-home {
@@ -239,26 +212,12 @@
             border-radius: 4px;
             text-decoration: none;
             margin-top: 2rem;
-            transition: all 0.3s;
+            transition: background-color 0.3s;
             font-weight: 500;
-            box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
         }
         
         .back-home:hover {
             background-color: #1a252f;
-            transform: translateY(-2px);
-            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.15);
-        }
-        
-        .response-time {
-            text-align: center;
-            margin-top: 2rem;
-            padding: 1rem;
-            background: linear-gradient(135deg, #e8f5e8 0%, #d0efd0 100%);
-            border-radius: 8px;
-            color: #27ae60;
-            font-weight: 500;
-            border-right: 3px solid #2ecc71;
         }
         
         footer {
@@ -344,13 +303,11 @@
     </style>
 </head>
 <body>
-    <!-- כותרת האתר -->
     <header>
         <h1 class="site-title">קול פנימי</h1>
         <p class="site-subtitle">בלוג על נפש, חברה ומה שביניהם</p>
     </header>
     
-    <!-- תפריט ניווט -->
     <nav>
         <div class="nav-container">
             <a href="index.html" class="nav-link">בית</a>
@@ -359,7 +316,6 @@
         </div>
     </nav>
     
-    <!-- תוכן דף צור קשר -->
     <div class="contact-container">
         <div class="contact-content">
             <h1 class="contact-title">צור קשר</h1>
@@ -369,7 +325,6 @@
                 או סתם רוצים להגיד שלום - אשמח מאוד לקבל מכם הודעה.
             </p>
             
-            <!-- קטע שיתופי פעולה -->
             <div class="collaboration-section">
                 <h2 class="collaboration-title">רוצה להצטרף למסע?</h2>
                 <p class="collaboration-text">
@@ -401,14 +356,6 @@
                         <h4>פיתוח ותכנות</h4>
                         <p>יודע.ת לפתח ולעצב?</p>
                     </div>
-                    
-                    <div class="skill-item">
-                        <div class="skill-icon">
-                            <i class="fas fa-lightbulb"></i>
-                        </div>
-                        <h4>רעיונות יצירתיים</h4>
-                        <p>יש לך רעיונות חדשים?</p>
-                    </div>
                 </div>
                 
                 <p style="text-align: center; margin-top: 1.5rem; font-weight: 500; color: #2c3e50;">
@@ -416,14 +363,13 @@
                 </p>
             </div>
             
-            <!-- דרכי התקשרות -->
             <div class="contact-methods">
                 <div class="contact-card">
                     <div class="contact-icon">
-                        <i class="fab fa-instagram instagram-icon"></i>
+                        <i class="fab fa-instagram instagram"></i>
                     </div>
                     <h3>אינסטגרם</h3>
-                    <p>עקבו אחרי לעדכונים שוטפים, תובנות יומיות ושיחות פתוחות עם הקהילה</p>
+                    <p>עקבו אחרי לעדכונים שוטפים ותובנות יומיות</p>
                     <a href="https://www.instagram.com/_reneyney._/" class="contact-button" target="_blank">
                         <i class="fab fa-instagram"></i> עקבו אחרי
                     </a>
@@ -431,18 +377,14 @@
                 
                 <div class="contact-card">
                     <div class="contact-icon">
-                        <i class="fas fa-envelope email-icon"></i>
+                        <i class="fas fa-envelope email"></i>
                     </div>
                     <h3>דוא"ל</h3>
-                    <p>לשיחות מעמיקות יותר, שאלות אישיות והצעות לשיתופי פעולה משמעותיים</p>
+                    <p>לשיחות מעמיקות יותר והצעות לשיתופי פעולה</p>
                     <a href="mailto:rene.sp.work@gmail.com" class="contact-button">
                         <i class="fas fa-envelope"></i> שלחו מייל
                     </a>
                 </div>
-            </div>
-            
-            <div class="response-time">
-                <i class="fas fa-clock"></i> אני עונה להודעות בתוך 24-48 שעות
             </div>
             
             <div style="text-align: center;">
@@ -454,15 +396,11 @@
         </div>
     </div>
     
-    <!-- תחתית האתר -->
     <footer>
         <div class="footer-content">
             <div class="footer-section">
                 <h3 class="footer-title">קול פנימי</h3>
                 <p>בלוג ועיון על פמיניזם, בריאות הנפש, פסיכולוגיה ורוחניות.</p>
-                <p style="margin-top: 0.5rem; font-size: 0.9rem; color: #bdc3c7;">
-                    <i class="fas fa-heart" style="color: #e74c3c;"></i> פרויקט התנדבותי
-                </p>
             </div>
             
             <div class="footer-section">
@@ -484,7 +422,7 @@
         </div>
         
         <div class="copyright">
-            © 2025 נכתב באהבה על ידי Rene Sparks | פרויקט התנדבותי
+            © 2025 נכתב באהבה על ידי Rene Sparks
         </div>
     </footer>
 </body>
