@@ -236,9 +236,88 @@
         .email {
             background: linear-gradient(45deg, #EA4335, #FBBC05);
         }
-        .buymeacoffee {
-    background: linear-gradient(45deg, #FF813F, #FF0099);
-}
+        
+        /* עיצוב כפתור תקנו לי קפה */
+        .coffee-container {
+            text-align: center;
+            margin: 1rem 0;
+        }
+        
+        .coffee-button {
+            display: flex;
+            align-items: center;
+            background: linear-gradient(135deg, #FF813F 0%, #FF0099 50%, #FD1D1D 100%);
+            color: white;
+            text-decoration: none;
+            padding: 1.2rem 1.5rem;
+            border-radius: 12px;
+            box-shadow: 0 6px 15px rgba(255, 129, 63, 0.3);
+            transition: all 0.3s ease;
+            border: 2px solid rgba(255, 255, 255, 0.2);
+            position: relative;
+            overflow: hidden;
+        }
+        
+        .coffee-button:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 10px 25px rgba(255, 129, 63, 0.5);
+            background: linear-gradient(135deg, #FF944F 0%, #FF1A9A 50%, #FD3535 100%);
+        }
+        
+        .coffee-button::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background: linear-gradient(45deg, transparent 30%, rgba(255,255,255,0.1) 50%, transparent 70%);
+            transform: translateX(-100%);
+            transition: transform 0.6s;
+        }
+        
+        .coffee-button:hover::before {
+            transform: translateX(100%);
+        }
+        
+        .coffee-icon {
+            font-size: 2rem;
+            margin-left: 1rem;
+            flex-shrink: 0;
+            text-shadow: 0 2px 4px rgba(0,0,0,0.2);
+        }
+        
+        .coffee-text {
+            text-align: right;
+            flex-grow: 1;
+        }
+        
+        .coffee-main {
+            display: block;
+            font-size: 1.3rem;
+            font-weight: 700;
+            margin-bottom: 0.2rem;
+            text-shadow: 0 1px 3px rgba(0,0,0,0.3);
+        }
+        
+        .coffee-sub {
+            display: block;
+            font-size: 0.9rem;
+            opacity: 0.9;
+            font-weight: 400;
+            text-shadow: 0 1px 2px rgba(0,0,0,0.2);
+        }
+        
+        /* אנימציה עדינה לקפה */
+        @keyframes coffeeSteam {
+            0%, 100% { transform: translateY(0) scale(1); }
+            50% { transform: translateY(-2px) scale(1.05); }
+        }
+        
+        .coffee-icon i {
+            animation: coffeeSteam 3s ease-in-out infinite;
+        }
+        
         /* עיצוב תחתית האתר */
         footer {
             background-color: #2c3e50;
@@ -277,6 +356,9 @@
             color: #ecf0f1;
             text-decoration: none;
             transition: color 0.3s;
+            display: flex;
+            align-items: center;
+            gap: 0.5rem;
         }
         
         .footer-link a:hover {
@@ -297,6 +379,10 @@
             padding: 2rem;
             color: #7f8c8d;
             font-style: italic;
+            background-color: white;
+            border-radius: 8px;
+            margin-top: 2rem;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.05);
         }
         
         /* עיצוב רספונסיבי */
@@ -315,6 +401,19 @@
             
             .nav-container {
                 flex-wrap: wrap;
+            }
+            
+            .coffee-button {
+                padding: 1rem;
+            }
+            
+            .coffee-icon {
+                font-size: 1.5rem;
+                margin-left: 0.8rem;
+            }
+            
+            .coffee-main {
+                font-size: 1.1rem;
             }
         }
     </style>
@@ -339,15 +438,15 @@
     <div class="container">
         <!-- אזור המאמרים -->
         <main>
-            <!-- מאמר 1 - תוקן -->
+            <!-- מאמר 1 -->
             <article class="article-card">
                 <div class="article-image" style="background-image: url('sad man.jpg');">
-                    <!-- התמונה מכוונת למרכז -->
+                    <div class="image-text">בריאות נפשית גברית</div>
                 </div>
                 <div class="article-content">
                     <h2 class="article-title">המשבר השקט: בריאות הנפש הגברית</h2>
                     <div class="article-meta">
-                        <span>פורסם ב1 לנובמבר 2025</span>
+                        <span>פורסם ב-1 בנובמבר 2025</span>
                         <span>זמן קריאה: 7 דקות</span>
                     </div>
                     <p class="article-excerpt">
@@ -356,26 +455,30 @@
                     <a href="mentalhelthman.html" class="read-more">קראו עוד</a>
                 </div>
             </article>
-            <!-- מאמר חדש - פעיל -->
-<article class="article-card">
-    <div class="article-image" style="background-image: url('HEART.jpg');">
-        <div class="image-text">מסע של ריפוי והתחדשות</div>
-    </div>
-    <div class="article-content">
-        <h2 class="article-title">איך לומדים לחיות אחרי שהכול נשרף</h2>
-        <div class="article-meta">
-            <span>פורסם ב-5 בדצמבר 2025</span>
-            <span>זמן קריאה: 8 דקות</span>
-        </div>
-        <p class="article-excerpt">
-            מסע אישי של התאוששות ובנייה מחדש לאחר משברים קיצוניים. עדות על דיכאון, נטישה וטיפול - והדרך למצוא קול מחדש.
-        </p>
-        <a href="after-the-fire.html" class="read-more">קראו עכשיו</a>
-    </div>
-</article>
+            
+            <!-- מאמר 2 -->
+            <article class="article-card">
+                <div class="article-image" style="background-image: url('HEART.jpg');">
+                    <div class="image-text">מסע של ריפוי והתחדשות</div>
+                </div>
+                <div class="article-content">
+                    <h2 class="article-title">איך לומדים לחיות אחרי שהכול נשרף</h2>
+                    <div class="article-meta">
+                        <span>פורסם ב-5 בדצמבר 2025</span>
+                        <span>זמן קריאה: 8 דקות</span>
+                    </div>
+                    <p class="article-excerpt">
+                        מסע אישי של התאוששות ובנייה מחדש לאחר משברים קיצוניים. עדות על דיכאון, נטישה וטיפול - והדרך למצוא קול מחדש.
+                    </p>
+                    <a href="after-the-fire.html" class="read-more">קראו עכשיו</a>
+                </div>
+            </article>
+            
             <!-- הודעה על בנייה -->
             <div class="construction-notice">
-                נבנה באהבה ומ0 על ידי רנה ספרקס
+                <i class="fas fa-heart" style="color: #e74c3c; margin-left: 0.5rem;"></i>
+                נבנה באהבה ומ-0 על ידי רנה ספרקס
+                <i class="fas fa-heart" style="color: #e74c3c; margin-right: 0.5rem;"></i>
             </div>
         </main>
         
@@ -396,6 +499,22 @@
                 </div>
             </div>
             
+            <!-- תמכו בי -->
+            <div class="sidebar-section">
+                <h3 class="sidebar-title">תמכו בי</h3>
+                <div class="coffee-container">
+                    <a href="https://buymeacoffee.com/rene.sparks?new=1" class="coffee-button" target="_blank">
+                        <div class="coffee-icon">
+                            <i class="fas fa-mug-hot"></i>
+                        </div>
+                        <div class="coffee-text">
+                            <span class="coffee-main">תקנו לי קפה</span>
+                            <span class="coffee-sub">ותמכו בכתיבה שלי</span>
+                        </div>
+                    </a>
+                </div>
+            </div>
+            
             <!-- בקרוב בבלוג -->
             <div class="sidebar-section">
                 <h3 class="sidebar-title">בקרוב בבלוג</h3>
@@ -409,12 +528,6 @@
     
     <!-- תחתית האתר -->
     <footer>
-        <li class="footer-link">
-    <a href="[https://buymeacoffee.com/rene.sparks?new=1']" target="_blank">
-        <i class="fas fa-coffee"></i>
-        תקנו לי קפה
-    </a>
-</li>
         <div class="footer-content">
             <div class="footer-section">
                 <h3 class="footer-title">קול פנימי</h3>
@@ -424,9 +537,9 @@
             <div class="footer-section">
                 <h3 class="footer-title">קישורים מהירים</h3>
                 <ul class="footer-links">
-                    <li class="footer-link"><a href="index.html">בית</a></li>
-                    <li class="footer-link"><a href="about.html">אודות</a></li>
-                    <li class="footer-link"><a href="contact.html">צור קשר</a></li>
+                    <li class="footer-link"><a href="index.html"><i class="fas fa-home"></i> בית</a></li>
+                    <li class="footer-link"><a href="about.html"><i class="fas fa-user"></i> אודות</a></li>
+                    <li class="footer-link"><a href="contact.html"><i class="fas fa-envelope"></i> צור קשר</a></li>
                 </ul>
             </div>
             
@@ -435,6 +548,7 @@
                 <ul class="footer-links">
                     <li class="footer-link"><a href="https://www.instagram.com/_reneyney._/" target="_blank"><i class="fab fa-instagram"></i> אינסטגרם</a></li>
                     <li class="footer-link"><a href="mailto:rene.sp.work@gmail.com"><i class="fas fa-envelope"></i> דוא"ל</a></li>
+                    <li class="footer-link"><a href="https://buymeacoffee.com/rene.sparks?new=1" target="_blank"><i class="fas fa-mug-hot"></i> תקנו לי קפה</a></li>
                 </ul>
             </div>
         </div>
@@ -445,9 +559,3 @@
     </footer>
 </body>
 </html>
-
-
-
-
-
-
