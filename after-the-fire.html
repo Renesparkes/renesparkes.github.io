@@ -1,153 +1,366 @@
-כמה זמן יקח לקרוא את הכתבה בערך
-
 <!DOCTYPE html>
 <html lang="he" dir="rtl">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>איך לומדים לחיות אחרי שהכול נשרף</title>
+    <title>איך לומדים לחיות אחרי שהכול נשרף - קול פנימי</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
     <style>
-        /* איפוס ועיצוב בסיסי */
         * {
             margin: 0;
             padding: 0;
             box-sizing: border-box;
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
         }
         
         body {
-            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-            line-height: 1.7;
+            background-color: #f8f9fa;
             color: #333;
-            background-color: #f9f7f5;
-            padding: 0;
-            margin: 0;
+            line-height: 1.8;
         }
         
-        .container {
-            max-width: 800px;
-            margin: 0 auto;
-            padding: 20px;
-        }
-        
-        /* עיצוב הכותרת */
         header {
-            text-align: center;
-            padding: 40px 20px;
-            background: linear-gradient(135deg, #6a89cc 0%, #b8e994 100%);
+            background: linear-gradient(135deg, #2c3e50 0%, #4a6491 100%);
             color: white;
-            margin-bottom: 40px;
-            border-radius: 0 0 20px 20px;
-            box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+            padding: 2rem 0;
+            text-align: center;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
         }
         
-        h1 {
+        .site-title {
             font-size: 2.5rem;
-            margin-bottom: 15px;
-            text-shadow: 1px 1px 3px rgba(0,0,0,0.2);
+            margin-bottom: 0.5rem;
+            font-weight: 700;
         }
         
-        .subtitle {
+        .site-subtitle {
             font-size: 1.2rem;
-            font-style: italic;
+            font-weight: 300;
             opacity: 0.9;
         }
         
-        /* עיצוב התוכן */
-        .content {
+        nav {
+            background-color: #34495e;
+            padding: 1rem 0;
+            position: sticky;
+            top: 0;
+            z-index: 100;
+            box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+        }
+        
+        .nav-container {
+            max-width: 1200px;
+            margin: 0 auto;
+            display: flex;
+            justify-content: center;
+        }
+        
+        .nav-link {
+            color: white;
+            text-decoration: none;
+            padding: 0.5rem 1.5rem;
+            margin: 0 0.5rem;
+            border-radius: 4px;
+            transition: background-color 0.3s;
+        }
+        
+        .nav-link:hover {
+            background-color: rgba(255, 255, 255, 0.1);
+        }
+        
+        .article-container {
+            max-width: 900px;
+            margin: 3rem auto;
+            padding: 0 2rem;
+        }
+        
+        .article-header {
             background-color: white;
-            padding: 40px;
-            border-radius: 15px;
-            box-shadow: 0 5px 15px rgba(0,0,0,0.05);
-            margin-bottom: 40px;
+            border-radius: 12px;
+            padding: 3rem;
+            box-shadow: 0 6px 15px rgba(0, 0, 0, 0.08);
+            margin-bottom: 2rem;
         }
         
-        h2 {
-            color: #4a69bd;
-            margin: 30px 0 15px;
-            padding-bottom: 10px;
-            border-bottom: 1px solid #eee;
+        .article-title {
+            font-size: 2.2rem;
+            color: #2c3e50;
+            margin-bottom: 1rem;
+            text-align: center;
+            line-height: 1.3;
         }
         
-        p {
-            margin-bottom: 20px;
+        .article-subtitle {
+            font-size: 1.3rem;
+            color: #7f8c8d;
+            text-align: center;
+            margin-bottom: 2rem;
+            font-weight: 400;
+            line-height: 1.5;
+        }
+        
+        .article-meta {
+            color: #7f8c8d;
+            font-size: 1rem;
+            text-align: center;
+            margin-bottom: 2rem;
+            display: flex;
+            justify-content: center;
+            gap: 2rem;
+        }
+        
+        .article-image {
+            width: 100%;
+            height: 400px;
+            background-image: url('HEART.jpg');
+            background-size: cover;
+            background-position: center;
+            border-radius: 8px;
+            margin: 2rem 0;
+        }
+        
+        .article-content {
+            background-color: white;
+            border-radius: 12px;
+            padding: 3rem;
+            box-shadow: 0 6px 15px rgba(0, 0, 0, 0.08);
+            line-height: 1.8;
             font-size: 1.1rem;
         }
         
+        .article-content p {
+            margin-bottom: 1.5rem;
+            color: #444;
+            text-align: justify;
+        }
+        
+        .article-content h2 {
+            color: #2c3e50;
+            margin: 2.5rem 0 1.5rem 0;
+            padding-right: 1rem;
+            border-right: 4px solid #e74c3c;
+        }
+        
         .highlight {
-            background-color: #f8f9fa;
-            border-right: 4px solid #b8e994;
-            padding: 15px 20px;
-            margin: 25px 0;
+            background: linear-gradient(135deg, #fce8e6 0%, #fadbd8 100%);
+            padding: 2rem;
+            border-radius: 8px;
+            margin: 2rem 0;
+            border-right: 4px solid #e74c3c;
             font-style: italic;
+            font-size: 1.2rem;
+            text-align: center;
         }
         
         .quote {
-            background-color: #f1f8ff;
-            border-right: 4px solid #6a89cc;
-            padding: 15px 20px;
-            margin: 25px 0;
+            background: linear-gradient(135deg, #e8f4f8 0%, #d4edfa 100%);
+            padding: 2rem;
+            border-radius: 8px;
+            margin: 2rem 0;
+            border-right: 4px solid #3498db;
             font-style: italic;
         }
         
         .note {
-            background-color: #fff9e6;
-            border-right: 4px solid #ffd166;
-            padding: 15px 20px;
-            margin: 25px 0;
+            background: linear-gradient(135deg, #fff9e6 0%, #ffecb3 100%);
+            padding: 1.5rem;
+            border-radius: 8px;
+            margin: 2rem 0;
+            border-right: 4px solid #f39c12;
             font-size: 0.95rem;
         }
         
-        /* עיצוב רשימות */
-        ul {
-            margin: 20px 0;
-            padding-right: 20px;
+        .emergency-numbers {
+            background: linear-gradient(135deg, #fff3cd 0%, #ffeaa7 100%);
+            padding: 2rem;
+            border-radius: 10px;
+            margin: 3rem 0;
+            border-right: 4px solid #f39c12;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.05);
         }
         
-        li {
-            margin-bottom: 10px;
+        .emergency-numbers h3 {
+            color: #e74c3c;
+            margin-bottom: 1.5rem;
+            display: flex;
+            align-items: center;
+            gap: 0.5rem;
         }
         
-        /* עיצוב תחתית */
-        footer {
-            text-align: center;
-            padding: 30px 20px;
-            background-color: #4a69bd;
+        .numbers-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 1rem;
+            margin-bottom: 1.5rem;
+        }
+        
+        .number-item {
+            background: white;
+            padding: 1rem;
+            border-radius: 6px;
+            box-shadow: 0 2px 4px rgba(0, 0, 0, 0.05);
+        }
+        
+        .number-item strong {
+            color: #2c3e50;
+        }
+        
+        .number-item a {
+            color: #3498db;
+            text-decoration: none;
+        }
+        
+        .number-item a:hover {
+            text-decoration: underline;
+        }
+        
+        .emergency-note {
+            background: #e74c3c;
             color: white;
-            border-radius: 20px 20px 0 0;
-            margin-top: 40px;
+            padding: 1rem;
+            border-radius: 6px;
+            text-align: center;
+            margin-top: 1rem;
+            display: flex;
+            align-items: center;
+            gap: 0.5rem;
+            justify-content: center;
         }
         
-        .footer-text {
-            max-width: 600px;
+        .back-home {
+            display: inline-flex;
+            align-items: center;
+            gap: 0.5rem;
+            background-color: #3498db;
+            color: white;
+            padding: 0.8rem 1.5rem;
+            border-radius: 4px;
+            text-decoration: none;
+            margin-top: 2rem;
+            transition: background-color 0.3s;
+            font-weight: 500;
+        }
+        
+        .back-home:hover {
+            background-color: #2980b9;
+        }
+        
+        footer {
+            background-color: #2c3e50;
+            color: white;
+            padding: 2rem 0;
+            margin-top: 4rem;
+        }
+        
+        .footer-content {
+            max-width: 1200px;
             margin: 0 auto;
+            display: flex;
+            justify-content: space-between;
+            padding: 0 1rem;
         }
         
-        /* עיצוב רספונסיבי */
+        .footer-section {
+            flex: 1;
+            margin: 0 1rem;
+        }
+        
+        .footer-title {
+            font-size: 1.2rem;
+            margin-bottom: 1rem;
+        }
+        
+        .footer-links {
+            list-style-type: none;
+        }
+        
+        .footer-link {
+            margin-bottom: 0.5rem;
+        }
+        
+        .footer-link a {
+            color: #ecf0f1;
+            text-decoration: none;
+            transition: color 0.3s;
+            display: flex;
+            align-items: center;
+            gap: 0.5rem;
+        }
+        
+        .footer-link a:hover {
+            color: #3498db;
+        }
+        
+        .copyright {
+            text-align: center;
+            margin-top: 2rem;
+            padding-top: 1rem;
+            border-top: 1px solid rgba(255, 255, 255, 0.1);
+            color: #bdc3c7;
+            font-size: 0.9rem;
+        }
+        
         @media (max-width: 768px) {
-            .container {
-                padding: 10px;
+            .article-container {
+                padding: 0 1rem;
             }
             
-            h1 {
-                font-size: 2rem;
+            .article-header, .article-content {
+                padding: 2rem 1.5rem;
             }
             
-            .content {
-                padding: 20px;
+            .article-image {
+                height: 250px;
+            }
+            
+            .article-title {
+                font-size: 1.8rem;
+            }
+            
+            .article-subtitle {
+                font-size: 1.1rem;
+            }
+            
+            .numbers-grid {
+                grid-template-columns: 1fr;
+            }
+            
+            .footer-content {
+                flex-direction: column;
+            }
+            
+            .footer-section {
+                margin-bottom: 1.5rem;
             }
         }
     </style>
 </head>
 <body>
     <header>
-        <div class="container">
-            <h1>איך לומדים לחיות אחרי שהכול נשרף</h1>
-            <p class="subtitle">עדות אישית על התמודדות עם דיכאון, נטישה וטיפול — ועל הדרך למצוא קול מחדש</p>
-        </div>
+        <h1 class="site-title">קול פנימי</h1>
+        <p class="site-subtitle">בלוג על נפש, חברה ומה שביניהם</p>
     </header>
     
-    <div class="container">
-        <div class="content">
+    <nav>
+        <div class="nav-container">
+            <a href="index.html" class="nav-link">בית</a>
+            <a href="about.html" class="nav-link">אודות</a>
+            <a href="contact.html" class="nav-link">צור קשר</a>
+        </div>
+    </nav>
+    
+    <div class="article-container">
+        <div class="article-header">
+            <h1 class="article-title">איך לומדים לחיות אחרי שהכול נשרף</h1>
+            <p class="article-subtitle">עדות אישית על התמודדות עם דיכאון, נטישה וטיפול — ועל הדרך למצוא קול מחדש</p>
+            <div class="article-meta">
+                <span>פורסם ב-5 בדצמבר 2025</span>
+                <span>זמן קריאה: 8 דקות</span>
+            </div>
+            <div class="article-image"></div>
+        </div>
+        
+        <div class="article-content">
             <div class="highlight">
                 <p>כשהכאב הופך לכלי ריפוי: מסע אישי מתוך דיכאון, טראומה ותקווה</p>
             </div>
@@ -215,19 +428,69 @@
                 <p>כי ההפך מהתמכרות — הוא קשר. לא חוסר שליטה, אלא חוסר חיבור.</p>
             </div>
             
+            <!-- מספרי חירום -->
+            <div class="emergency-numbers">
+                <h3><i class="fas fa-phone-alt"></i> מספרי חירום לבריאות הנפש</h3>
+                <div class="numbers-grid">
+                    <div class="number-item">
+                        <strong>ער"ן (עזרה ראשונה נפשית):</strong> 1201
+                    </div>
+                    <div class="number-item">
+                        <strong>סה"ר (סיוע והקשבה ברשת):</strong> 
+                        <a href="https://sahar.org.il" target="_blank">sahar.org.il</a>
+                    </div>
+                    <div class="number-item">
+                        <strong>נט"ל (נפגעי טראומה):</strong> 1-800-363-363
+                    </div>
+                    <div class="number-item">
+                        <strong>המשרד לביטחון לאומי:</strong> 118
+                    </div>
+                </div>
+                <p class="emergency-note">
+                    <i class="fas fa-exclamation-circle"></i>
+                    אם את/ה זקוק/ה לעזרה, אל תהסס/י לפנות. אנשי המקצוע בארגונים אלו מחכים לך 24/7.
+                </p>
+            </div>
+
             <h2>המסר שלי אליך</h2>
             <p>בין אם אתה בן 16, אישה בת 40, או אדם בן 70 — הכאב שלך לא קטן מדי. אין גיל שבו "לא לגיטימי" להרגיש. אין מין שמותר לו להרגיש יותר או פחות (תקראו על "בריאות נפשית גברית") ואם אתה מזהה מישהו סביבך שנמצא שם — תן לו מקום, אל תשתיק. ריפוי מתחיל ממרחב שמאפשר לדבר.</p>
             
             <p>אני מאמינה היום שהדיכאון לא היה סוף — אלא ההתחלה שלי. הוא הכריח אותי ללמוד מחדש איך לחיות, איך להרגיש, ואיך לאהוב את עצמי. ואם הסיפור שלי יגרום למישהו אחד להישאר — הוא היה שווה הכול.</p>
+
+            <a href="index.html" class="back-home">
+                <i class="fas fa-arrow-right"></i>
+                חזרה לדף הבית
+            </a>
         </div>
     </div>
     
     <footer>
-        <div class="container">
-            <div class="footer-text">
-                <p>אם הסיפור הזה נגע בך ואת/ה זקוק/ה לעזרה, אל תהסס/י לפנות:</p>
-                <p>ער"ן (עזרה ראשונה נפשית): 1201 | סה"ר (סיוע והקשבה ברשת): https://sahar.org.il</p>
+        <div class="footer-content">
+            <div class="footer-section">
+                <h3 class="footer-title">קול פנימי</h3>
+                <p>בלוג ועיון על פמיניזם, בריאות הנפש, פסיכולוגיה ורוחניות.</p>
             </div>
+            
+            <div class="footer-section">
+                <h3 class="footer-title">קישורים מהירים</h3>
+                <ul class="footer-links">
+                    <li class="footer-link"><a href="index.html"><i class="fas fa-home"></i> בית</a></li>
+                    <li class="footer-link"><a href="about.html"><i class="fas fa-user"></i> אודות</a></li>
+                    <li class="footer-link"><a href="contact.html"><i class="fas fa-envelope"></i> צור קשר</a></li>
+                </ul>
+            </div>
+            
+            <div class="footer-section">
+                <h3 class="footer-title">עקבו אחרי</h3>
+                <ul class="footer-links">
+                    <li class="footer-link"><a href="https://www.instagram.com/_reneyney._/" target="_blank"><i class="fab fa-instagram"></i> אינסטגרם</a></li>
+                    <li class="footer-link"><a href="mailto:rene.sp.work@gmail.com"><i class="fas fa-envelope"></i> דוא"ל</a></li>
+                </ul>
+            </div>
+        </div>
+        
+        <div class="copyright">
+            © 2025 נכתב באהבה על ידי Rene Sparks
         </div>
     </footer>
 </body>
